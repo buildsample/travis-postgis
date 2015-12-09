@@ -4,6 +4,8 @@ python:
   - "2.7"
   - "3.3"
 
+services:
+  - postgres
 # command to install dependencies
 install:
     - "pip install -r requirements.txt "
