@@ -4,8 +4,8 @@ python:
   - "2.7"
   - "3.3"
 
-services:
-  - postgres
+#services:
+ # - postgres
 # command to install dependencies
 install:
     - "pip install -r requirements.txt "
@@ -22,6 +22,8 @@ before_script:
   - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d travis_postgis
   - psql -f test_data.sql -U postgres -d travis_postgis
 
+addons:
+ postgresql: 9.2
 
 # command to run tests
 script: nosetests --verbose
