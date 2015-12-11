@@ -22,8 +22,8 @@ before_script:
   - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d travis_postgis
   - psql -f test_data.sql -U postgres -d travis_postgis
 
-addons:
- postgresql: 9.2
+#addons:
+ #postgresql: 9.2
 
 # command to run tests
 script: nosetests --verbose
